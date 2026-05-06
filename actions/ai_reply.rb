@@ -63,7 +63,7 @@ module Ruboty
           response = client.messages.create(
             model: MODEL,
             max_tokens: MAX_TOKENS,
-            system: "#{SYSTEM_PROMPT}\n現在の日時: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %Z')}",
+            system: "#{SYSTEM_PROMPT}\n現在の日時: #{Time.now.getlocal('+09:00').strftime('%Y-%m-%d %H:%M:%S JST')}",
             tools: tools,
             messages: messages
           )
